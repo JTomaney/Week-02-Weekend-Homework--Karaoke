@@ -11,6 +11,10 @@ class RoomTest < MiniTest::Test
       @room0 = Room.new(0)
       @guest0 = Guest.new("Jon")
       @guest1 = Guest.new("Mat")
+      @guest2 = Guest.new("Rach")
+      @guest3 = Guest.new("Mike")
+      @guest4 = Guest.new("Jenny")
+      @guest5 = Guest.new("Kieran")
   end
 
   def test_room_has_number
@@ -42,5 +46,12 @@ class RoomTest < MiniTest::Test
     assert_equal([@guest1], @room0.guest_list)
   end
 
-
+  def test_room_can_reject_guest_when_full
+    @room0.add_guest(@guest0)
+    @room0.add_guest(@guest1)
+    @room0.add_guest(@guest2)
+    @room0.add_guest(@guest3)
+    @room0.add_guest(@guest4)
+    assert_equal("Sorry, this room is full", @room0.add_guest(@guest5))
+  end
 end

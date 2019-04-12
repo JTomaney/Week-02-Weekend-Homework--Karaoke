@@ -13,7 +13,10 @@ class Room
   end
 
   def add_guest(guest)
-    @guest_list.push(guest)
+    if @guest_list.length < 5
+      @guest_list.push(guest)
+    end
+    return "Sorry, this room is full"
   end
 
   def remove_guest(guest)
