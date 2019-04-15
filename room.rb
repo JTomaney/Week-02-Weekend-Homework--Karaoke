@@ -51,9 +51,7 @@ class Room
 
   def check_for_favourites(guest)
     @playlist.each do |song|
-      if song.title == guest.favourite_song
-        guest.cheer
-      end
+      return  guest.cheer if song.title == guest.favourite_song
     end
   end
 

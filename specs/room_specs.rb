@@ -84,7 +84,7 @@ class RoomTest < MiniTest::Test
   def test_check_for_favourites
     @room0.add_song(@song0)
     @room0.add_guest(@customer0)
-    assert_equal("Yeah", @room0.check_for_favourites(@guest0))
+    assert_equal("Yeah!", @room0.check_for_favourites(@guest0))
   end
 
 end
